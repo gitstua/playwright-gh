@@ -9,7 +9,6 @@ You need to create the follows secrets in your GitHub repo where this workflow i
 - GITHUB_USERNAME This is the GitHub username of the machine account.
 - GITHUB_PASSWORD This is your GitHub password of the machine account.
 
-
 ## Development
 Create a .env file with the following variables:
 ```
