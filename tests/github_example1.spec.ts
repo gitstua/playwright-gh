@@ -21,8 +21,20 @@ test('test', async ({ page }) => {
 
 async function Login(page) {
   const secret_gh_totp = process.env.GH_TOTP;
+  const userName = process.env.GH_USERNAME || '';
+  const password = process.env.GH_PASSWORD || '';
 
-  // generate a new totp instance
+  if (!secret_gh_totp) {
+    throw new Error('GH_TOTP is not set as environment variable in .env file or as Actions secret ');
+  }
+  if (!userName) {
+    throw new Error('GH_USERNAME is not set as environment variable in .env file or as Actions secret ');
+  }
+  if (!password) {
+    throw new Error('GH_PASSWORD is not set as environment variable in .env file or as Actions secret ');
+  }
+
+  // create a new totp instance and generate a token
   let totp = new OTPAuth.TOTP({
     issuer: "GitHub",
     label: "USERNAME",
@@ -31,11 +43,8 @@ async function Login(page) {
     period: 30,
     secret: secret_gh_totp
   });
-
   const totptoken = totp.generate();
-  const userName = process.env.GH_USERNAME || '';
-  const password = process.env.GH_PASSWORD || '';
-
+  
   // open page and login
   await page.goto('https://github.com/');
   await page.getByRole('link', { name: 'Sign in' }).click();
