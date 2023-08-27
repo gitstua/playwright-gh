@@ -4,12 +4,14 @@ test('test org list', async ({ page }) => {
   await page.goto('https://github.com/');
   await page.getByLabel('Open user account menu').click();
   await page.getByRole('link', { name: 'Your organizations' }).click();
-  var innerHTML = await page.locator('turbo-frame').innerHTML();
-  await expect(innerHTML).toContain('Organizations');
+  //await page.waitForLoadState();
+  var innerHTML = await page.locator('turbo-frame').filter({hasText: 'Organizations' }).innerHTML();
+  //await expect(innerHTML).toContain('Organizations');
 
   var text = await page.locator('turbo-frame').allTextContents() || '';
 
-  await page.locator('turbo-frame').screenshot({ path: './playwright-images/org-list.png' });
+  await page.locator('turbo-frame').filter({hasText: 'Organizations' })
+    .screenshot({ path: './playwright-images/org-list.png' });
 
   await test.info().annotations.push(
     {
