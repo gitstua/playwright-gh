@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   playwright:
-    name: 'Playwright Tests'
+    name: 'Playwright Tests with container'
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.37.0-jammy
