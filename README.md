@@ -18,7 +18,8 @@ GH_USERNAME=username
 GH_PASSWORD=pwd
 GH_TOTP=AAAXXXBBBXXXCCCA
 ```
-To run locally, you can use the following command:
+
+To run locally, you can use the [Playwright extension for VSCode](https://playwright.dev/docs/getting-started-vscode) or the following command:
 ```npx playwright test```
 
 ## Notes
