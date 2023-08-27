@@ -1,5 +1,7 @@
 # Purpose
-Example playwrite script to login to GitHub
+Example Playwright script to login to GitHub
+
+⚠️ It is not recommeded to automate GitHub UI since GitHub can change the format of pages at any time. The best way to automate GitHub is via [REST API](https://docs.github.com/en/rest), [GraphQL](https://docs.github.com/en/graphql) or [GitHub CLI](https://cli.github.com/).
 
 ## Usage
 There is a GitHub workflow that runs this script on push to main. 
@@ -20,5 +22,5 @@ To run locally, you can use the following command:
 ```npx playwright test```
 
 ## Notes
-It is recommended to use a GitHub personal access token instead of your password. For interactions with GitHub. 
+It is recommended to use a GitHub personal access token instead of your password for interactions with GitHub. 
 
