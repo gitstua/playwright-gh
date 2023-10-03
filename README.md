@@ -22,6 +22,9 @@ GH_TOTP=AAAXXXBBBXXXCCCA
 To run locally, you can use the [Playwright extension for VSCode](https://playwright.dev/docs/getting-started-vscode) or the following command:
 ```npx playwright test```
 
+## Recording new playwright scripts
+You can record tests as per these [instructions](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright#record-new-tests)
+
 ## Notes
 It is recommended to use a GitHub personal access token instead of your password for interactions with GitHub. 
 
